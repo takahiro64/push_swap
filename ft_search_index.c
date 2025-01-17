@@ -6,11 +6,13 @@
 /*   By: thine <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 15:58:18 by thine             #+#    #+#             */
-/*   Updated: 2025/01/15 16:19:44 by thine            ###   ########.fr       */
+/*   Updated: 2025/01/17 17:12:26 by thine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_index(t_stack stack, int nbr)
+#include"push_swap.h"
+
+int	ft_index(t_stack *stack, int nbr)
 {
 	int	i;
 
@@ -31,10 +33,10 @@ int	ft_search_insert_position_a(t_stack *a, int nbr)
 	t_stack *tmp;
 
 	i = 1;
-	if (nbr > a->nbr && nbr < ft_lstlast(a)->nbr)
+	if (nbr > a->nbr && nbr < ft_lst_last(a)->nbr)
 		i = 0;
 	else if (nbr > ft_max(a) || nbr < ft_min(a))
-		i = ft_index(b, ft_min(b));
+		i = ft_index(a, ft_min(a));
 	else
 	{
 		tmp = a->next;
@@ -54,7 +56,7 @@ int	ft_search_insert_position_b(t_stack *b, int nbr)
 	t_stack *tmp;
 
 	i = 1;
-	if (nbr > b->nbr && nbr < ft_lstlast(b)->nbr)
+	if (nbr > b->nbr && nbr < ft_lst_last(b)->nbr)
 		i = 0;
 	else if (nbr > ft_max(b) || nbr < ft_min(b))
 		i = ft_index(b, ft_max(b));
