@@ -6,7 +6,7 @@
 /*   By: thine <thine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:11:16 by sytorium          #+#    #+#             */
-/*   Updated: 2024/06/27 15:21:38 by thine            ###   ########.fr       */
+/*   Updated: 2025/01/19 13:18:17 by thine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>
+# include <stdint.h>
 
 typedef struct s_list
 {

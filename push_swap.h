@@ -15,6 +15,7 @@
 
 # include<unistd.h>
 # include<stdlib.h>
+# include<stdio.h>
 # include"libft/libft.h"
 
 typedef struct s_stack
@@ -28,7 +29,7 @@ int	ft_check_dup(t_stack *a);
 int	ft_atoi2(char	*str);
 t_stack *ft_process(int argc, char *argv[]);
 t_stack	*ft_sub_process(char *argv[]);
-void	ft_error(void);
+void	ft_error(char *str);
 t_stack	*ft_lst_last(t_stack *lst);
 int	ft_lst_size(t_stack *lst);
 int	ft_min(t_stack *lst);
@@ -77,5 +78,7 @@ void	ft_ss(t_stack **a, t_stack **b);
 void	ft_add_back(t_stack **stack, t_stack *content);
 int	ft_checksorted(t_stack *stack);
 t_stack	*ft_stack_new(int nbr);
+void	ft_free_stack(t_stack **stack);
+void	ft_print_test(t_stack *a, t_stack *b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: thine <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 17:13:33 by thine             #+#    #+#             */
-/*   Updated: 2025/01/17 17:13:53 by thine            ###   ########.fr       */
+/*   Updated: 2025/01/19 13:57:21 by thine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ int	ft_atoi2(char	*str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_error();
+			ft_error("isdigit");
 		num = num *10 + (*str - 48);
 		str++;
 	}
-	if ((num > 2147483647 + (1 - sign) / 2))
-		ft_error();
+	if ((num > (long long int)2147483647 + (1 - sign) / 2))
+		ft_error("over int");
 	return (sign * num);
 }
 
@@ -56,8 +56,22 @@ t_stack	*ft_stack_new(int nbr)
 
 	new = malloc(sizeof(t_stack));
 	if (!new)
-		ft_error();
+		ft_error("new stack");
 	new->nbr = nbr;
 	new->next = NULL;
 	return (new);
+}
+
+void	ft_free_stack(t_stack **stack)
+{
+	t_stack *tmp;
+
+	if (!stack)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
 }

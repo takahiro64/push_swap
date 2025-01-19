@@ -31,22 +31,25 @@ int	ft_search_insert_position_a(t_stack *a, int nbr)
 {
 	int	i;
 	t_stack *tmp;
+	t_stack *tmp2 = a;
 
 	i = 1;
-	if (nbr > a->nbr && nbr < ft_lst_last(a)->nbr)
+	// printf("SIP\n");
+	if (nbr < a->nbr && nbr > ft_lst_last(a)->nbr)
 		i = 0;
 	else if (nbr > ft_max(a) || nbr < ft_min(a))
 		i = ft_index(a, ft_min(a));
 	else
 	{
 		tmp = a->next;
-		while(a->nbr < nbr || tmp->nbr > nbr)
+		while((a->nbr > nbr || tmp->nbr < nbr) && tmp->next)
 		{
 			a = tmp;
 			tmp = a->next;
 			i++;
 		}
 	}
+
 	return (i);
 }
 

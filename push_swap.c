@@ -19,12 +19,12 @@ int	main(int argc, char *argv[])
 	a = ft_process(argc, argv);
 	if (!a || ft_check_dup(a))
 	{
-		//ft_free(&a);
-		ft_error();
+		ft_free_stack(&a);
+		ft_error("process");
 	}
 	if (!ft_checksorted(a))
 		ft_push_swap(&a);
-	//ft_free(&a);
+	ft_free_stack(&a);
 	return (0);
 }
 
@@ -37,7 +37,7 @@ t_stack *ft_process(int argc, char *argv[])
 	i = 1;
 	a = NULL;
 	if (argc < 2)
-		ft_error();
+		ft_error("argc<2");
 	if (argc == 2)
 		a = ft_sub_process(argv);
 	else
@@ -63,12 +63,12 @@ t_stack	*ft_sub_process(char *argv[])
 	i = 0;
 	tmp = ft_split(argv[1], ' ');
 	if (!tmp)
-		ft_error();
+		ft_error("split error");
 	while (tmp[i])
 	{
-		i = ft_atoi2(tmp[i]);
+		num = ft_atoi2(tmp[i]);
 		free(tmp[i]);
-		ft_add_back(&a, ft_stack_new(i));
+		ft_add_back(&a, ft_stack_new(num));
 		i++;
 	}	
 	free(tmp);
@@ -101,3 +101,19 @@ void	ft_push_swap(t_stack **stack_a)
 	}
 }
 
+void	ft_print_test(t_stack *a, t_stack *b)
+{
+	printf("\na ");
+	while (a)
+	{
+		printf("%ld ", a->nbr);
+		a = a->next;
+	}
+	printf("\nb ");
+	while (b)
+	{
+		printf("%ld ", b->nbr);
+		b = b->next;
+	}
+	printf("\n");
+}

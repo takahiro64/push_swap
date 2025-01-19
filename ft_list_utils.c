@@ -53,11 +53,13 @@ int	ft_max(t_stack *lst)
 	int	max;
 
 	max = lst-> nbr;
-	while (lst)
+	while (lst->next)
 	{
-		if (lst->nbr < max)
+		if (lst->nbr > max)
 			max = lst->nbr;
 		lst = lst->next;
 	}
+	if (lst->nbr > max)
+		max = lst->nbr;
 	return (max);
 }

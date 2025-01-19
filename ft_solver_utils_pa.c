@@ -16,7 +16,7 @@ int	ft_case_rarb_pa(t_stack *a, t_stack *b, int nbr)
 {
 	int	i;
 
-	i = ft_search_insert_position_a(a, nbr); 
+	i = ft_search_insert_position_a(a, nbr);
 	if (i < ft_index(b, nbr))
 		i = ft_index(b, nbr);
 	return (i);
