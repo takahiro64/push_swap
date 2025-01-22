@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 int	ft_pb_rarb(t_stack **a, t_stack **b, int nbr)
 {
@@ -21,7 +21,7 @@ int	ft_pb_rarb(t_stack **a, t_stack **b, int nbr)
 	while (ft_search_insert_position_b(*b, nbr) != 0)
 		ft_rb(b);
 	ft_pb(a, b);
-	return(-1);
+	return (-1);
 }
 
 int	ft_pb_rrarb(t_stack **a, t_stack **b, int nbr)
@@ -31,7 +31,7 @@ int	ft_pb_rrarb(t_stack **a, t_stack **b, int nbr)
 	while (ft_search_insert_position_b(*b, nbr) != 0)
 		ft_rb(b);
 	ft_pb(a, b);
-	return(-1);
+	return (-1);
 }
 
 int	ft_pb_rarrb(t_stack **a, t_stack **b, int nbr)
@@ -41,7 +41,7 @@ int	ft_pb_rarrb(t_stack **a, t_stack **b, int nbr)
 	while (ft_search_insert_position_b(*b, nbr) != 0)
 		ft_rrb(b);
 	ft_pb(a, b);
-	return(-1);
+	return (-1);
 }
 
 int	ft_pb_rrarrb(t_stack **a, t_stack **b, int nbr)
@@ -53,12 +53,12 @@ int	ft_pb_rrarrb(t_stack **a, t_stack **b, int nbr)
 	while (ft_search_insert_position_b(*b, nbr) != 0)
 		ft_rrb(b);
 	ft_pb(a, b);
-	return(-1);
+	return (-1);
 }
 
 t_stack	*ft_push_b(t_stack **a)
 {
-	t_stack *b;
+	t_stack	*b;
 
 	b = NULL;
 	if (ft_lst_size(*a) > 3 && !ft_checksorted(*a))

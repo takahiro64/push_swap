@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 int	main(int argc, char *argv[])
-{	
-	t_stack *a;
+{
+	t_stack	*a;
 
 	a = ft_process(argc, argv);
 	if (!a || ft_check_dup(a))
@@ -28,11 +28,11 @@ int	main(int argc, char *argv[])
 	return (0);
 }
 
-t_stack *ft_process(int argc, char *argv[])
+t_stack	*ft_process(int argc, char *argv[])
 {
-	t_stack *a;
-	int	i;
-	int	num;
+	t_stack	*a;
+	int		i;
+	int		num;
 
 	i = 1;
 	a = NULL;
@@ -42,7 +42,7 @@ t_stack *ft_process(int argc, char *argv[])
 		a = ft_sub_process(argv);
 	else
 	{
-		while(i < argc)
+		while (i < argc)
 		{
 			num = ft_atoi2(argv[i]);
 			ft_add_back(&a, ft_stack_new(num));
@@ -56,8 +56,8 @@ t_stack	*ft_sub_process(char *argv[])
 {
 	t_stack	*a;
 	char	**tmp;
-	int	i;
-	int	num;
+	int		i;
+	int		num;
 
 	a = NULL;
 	i = 0;
@@ -70,18 +70,18 @@ t_stack	*ft_sub_process(char *argv[])
 		free(tmp[i]);
 		ft_add_back(&a, ft_stack_new(num));
 		i++;
-	}	
+	}
 	free(tmp);
 	return (a);
 }
 
 void	ft_push_swap(t_stack **stack_a)
 {
-	t_stack *stack_b;
-	int	i;
+	t_stack	*stack_b;
+	int		i;
 
 	stack_b = NULL;
-	if (ft_lst_size(*stack_a) ==2)
+	if (ft_lst_size(*stack_a) == 2)
 		ft_sa(stack_a);
 	else
 	{

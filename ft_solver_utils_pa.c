@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 int	ft_case_rarb_pa(t_stack *a, t_stack *b, int nbr)
 {
@@ -53,5 +53,5 @@ int	ft_case_rrarrb_pa(t_stack *a, t_stack *b, int nbr)
 		i = ft_lst_size(b) - ft_search_insert_position_a(a, nbr);
 	if (a->nbr != nbr && i < (ft_lst_size(a) - ft_index(a, nbr)))
 		i = ft_lst_size(a) - ft_index(a, nbr);
-	return(i);
+	return (i);
 }

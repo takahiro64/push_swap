@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 int	ft_index(t_stack *stack, int nbr)
 {
@@ -18,23 +18,23 @@ int	ft_index(t_stack *stack, int nbr)
 
 	i = 0;
 	while (stack->nbr != nbr)
-	 {
-		 i++;
-		 if (!stack->next)
-			 return(-1);
-		 stack = stack->next;
-	 }
-	 return (i);
+	{
+		i++;
+		if (!stack->next)
+			return (-1);
+		stack = stack->next;
+	}
+	return (i);
 }
 
 int	ft_search_insert_position_a(t_stack *a, int nbr)
 {
-	int	i;
-	t_stack *tmp;
-	t_stack *tmp2 = a;
+	int		i;
+	t_stack	*tmp;
+	t_stack	*tmp2;
 
+	tmp2 = a;
 	i = 1;
-	// printf("SIP\n");
 	if (nbr < a->nbr && nbr > ft_lst_last(a)->nbr)
 		i = 0;
 	else if (nbr > ft_max(a) || nbr < ft_min(a))
@@ -42,21 +42,20 @@ int	ft_search_insert_position_a(t_stack *a, int nbr)
 	else
 	{
 		tmp = a->next;
-		while((a->nbr > nbr || tmp->nbr < nbr) && tmp->next)
+		while ((a->nbr > nbr || tmp->nbr < nbr) && tmp->next)
 		{
 			a = tmp;
 			tmp = a->next;
 			i++;
 		}
 	}
-
 	return (i);
 }
 
 int	ft_search_insert_position_b(t_stack *b, int nbr)
 {
-	int	i;
-	t_stack *tmp;
+	int		i;
+	t_stack	*tmp;
 
 	i = 1;
 	if (nbr > b->nbr && nbr < ft_lst_last(b)->nbr)
@@ -66,7 +65,7 @@ int	ft_search_insert_position_b(t_stack *b, int nbr)
 	else
 	{
 		tmp = b->next;
-		while(b->nbr < nbr || tmp->nbr > nbr)
+		while (b->nbr < nbr || tmp->nbr > nbr)
 		{
 			b = tmp;
 			tmp = b->next;

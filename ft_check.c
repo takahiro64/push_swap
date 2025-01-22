@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 int	ft_checksorted(t_stack *stack)
 {
-    int i;
+	int	i;
 
-    i = stack->nbr;
-    while (stack)
-    {
-        if (i > stack->nbr)
-            return (0);
-        i = stack->nbr;
-        stack = stack->next;
-    }
-    return (1);
+	i = stack->nbr;
+	while (stack)
+	{
+		if (i > stack->nbr)
+			return (0);
+		i = stack->nbr;
+		stack = stack->next;
+	}
+	return (1);
 }
 
 int	ft_check_dup(t_stack *a)

@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
-int	ft_atoi2(char	*str)
+int	ft_atoi2(char *str)
 {
-	int	sign;
+	int				sign;
 	long long int	num;
 
 	num = 0;
@@ -32,7 +32,7 @@ int	ft_atoi2(char	*str)
 	{
 		if (!ft_isdigit(*str))
 			ft_error("isdigit");
-		num = num *10 + (*str - 48);
+		num = num * 10 + (*str - 48);
 		str++;
 	}
 	if ((num > (long long int)2147483647 + (1 - sign) / 2))
@@ -64,7 +64,7 @@ t_stack	*ft_stack_new(int nbr)
 
 void	ft_free_stack(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!stack)
 		return ;

@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 int	ft_select_operation_pb(t_stack *a, t_stack *b)
 {
-	int	i;
-	t_stack *tmp;
+	int		i;
+	t_stack	*tmp;
 
 	tmp = a;
-	i = ft_case_rrarrb_pb(a, b, tmp->nbr); 
+	i = ft_case_rrarrb_pb(a, b, tmp->nbr);
 	while (tmp)
 	{
 		if (i > ft_case_rarb_pb(a, b, tmp->nbr))
@@ -36,11 +36,11 @@ int	ft_select_operation_pb(t_stack *a, t_stack *b)
 
 int	ft_select_operation_pa(t_stack *a, t_stack *b)
 {
-	int	i;
-	t_stack *tmp;
+	int		i;
+	t_stack	*tmp;
 
 	tmp = b;
-	i = ft_case_rrarrb_pa(a, b, tmp->nbr); 
+	i = ft_case_rrarrb_pa(a, b, tmp->nbr);
 	while (tmp)
 	{
 		if (i > ft_case_rarb_pa(a, b, tmp->nbr))

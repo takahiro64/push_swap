@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 void	ft_rotate(t_stack **a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	t_stack	*last;
 
 	if (!*a || !(*a)->next)

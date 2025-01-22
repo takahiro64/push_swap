@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
-t_stack **ft_sort_a(t_stack **a, t_stack **b)
+t_stack	**ft_sort_a(t_stack **a, t_stack **b)
 {
-	int	i;
+	int		i;
 	t_stack	*tmp;
 
 	while (*b)
@@ -40,7 +40,7 @@ t_stack **ft_sort_a(t_stack **a, t_stack **b)
 
 void	ft_sort_b(t_stack **a, t_stack **b)
 {
-	int	i;
+	int		i;
 	t_stack	*tmp;
 
 	while (ft_lst_size(*a) > 3 && !ft_checksorted(*a))

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 t_stack	*ft_lst_last(t_stack *lst)
 {
@@ -38,7 +38,7 @@ int	ft_min(t_stack *lst)
 {
 	int	min;
 
-	min = lst-> nbr;
+	min = lst->nbr;
 	while (lst)
 	{
 		if (lst->nbr < min)
@@ -52,7 +52,7 @@ int	ft_max(t_stack *lst)
 {
 	int	max;
 
-	max = lst-> nbr;
+	max = lst->nbr;
 	while (lst->next)
 	{
 		if (lst->nbr > max)

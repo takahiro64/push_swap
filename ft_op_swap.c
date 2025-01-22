@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 void	ft_swap(t_stack **a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = (*a)->next;
 	(*a)->next = tmp->next;
