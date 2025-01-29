@@ -6,7 +6,7 @@
 /*   By: thine <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:58:06 by thine             #+#    #+#             */
-/*   Updated: 2025/01/29 13:38:41 by thine            ###   ########.fr       */
+/*   Updated: 2025/01/29 16:56:04 by thine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_stack	*ft_process(int argc, char *argv[])
 	{
 		while (i < argc)
 		{
-			num = ft_atoi2(argv[i], &a);
+			num = ft_atoi2(argv[i], &a, NULL);
 			ft_add_back(&a, ft_stack_new(num));
 			i++;
 		}
@@ -63,12 +63,11 @@ t_stack	*ft_sub_process(char *argv[])
 		ft_error(&a);
 	while (tmp[i])
 	{
-		num = ft_atoi2(tmp[i], &a);
-		free(tmp[i]);
+		num = ft_atoi2(tmp[i], &a, &tmp);
 		ft_add_back(&a, ft_stack_new(num));
 		i++;
 	}
-	free(tmp);
+	ft_free_double_point(tmp);
 	return (a);
 }
 

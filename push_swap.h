@@ -6,7 +6,7 @@
 /*   By: thine <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:02:22 by thine             #+#    #+#             */
-/*   Updated: 2025/01/29 13:57:37 by thine            ###   ########.fr       */
+/*   Updated: 2025/01/29 16:55:42 by thine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 
 int					main(int argc, char *argv[]);
 int					ft_check_dup(t_stack *a);
-int					ft_atoi2(char *str, t_stack **stack);
+int					ft_atoi2(char *str, t_stack **stack, char ***tmp);
 t_stack				*ft_process(int argc, char *argv[]);
 t_stack				*ft_sub_process(char *argv[]);
 void				ft_error(t_stack **stack);
@@ -80,5 +80,6 @@ int					ft_checksorted(t_stack *stack);
 t_stack				*ft_stack_new(int nbr);
 void				ft_free_stack(t_stack **stack);
 void				ft_print_test(t_stack *a, t_stack *b);
+void				ft_free_double_point(char **tmp);
 
 #endif

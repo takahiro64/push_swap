@@ -6,15 +6,15 @@
 /*   By: thine <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 17:13:33 by thine             #+#    #+#             */
-/*   Updated: 2025/01/29 13:57:01 by thine            ###   ########.fr       */
+/*   Updated: 2025/01/29 16:53:48 by thine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi2(char *str, t_stack **a)
+int	ft_atoi2(char *str, t_stack **a, char ***tmp)
 {
-	int	sign;
+	int		sign;
 	long	num;
 
 	num = 0;
@@ -30,7 +30,10 @@ int	ft_atoi2(char *str, t_stack **a)
 	{
 		num = num * 10 + sign * (*str - 48);
 		if (!ft_isdigit(*str) || num > 2147483647 || num < -2147483648)
+		{
+			ft_free_double_point(*tmp);
 			ft_error(a);
+		}
 		str++;
 	}
 	return (num);
@@ -70,4 +73,20 @@ void	ft_free_stack(t_stack **stack)
 		free(*stack);
 		*stack = tmp;
 	}
+}
+
+void	ft_free_double_point(char **tmp)
+{
+	int	i;
+
+	i = 0;
+	if (!tmp)
+		return ;
+	while (tmp[i])
+	{
+		free(tmp[i]);
+		tmp[i] = NULL;
+		i++;
+	}
+	free(tmp);
 }
