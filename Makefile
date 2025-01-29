@@ -6,7 +6,7 @@
 #    By: thine <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 16:08:51 by thine             #+#    #+#              #
-#    Updated: 2025/01/17 17:13:41 by thine            ###   ########.fr        #
+#    Updated: 2025/01/29 12:33:27 by thine            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,9 @@ ${NAME}: ${OBJ}
 all: ${NAME}
 
 clean:
-	${RM} ${OBJ} ${NAME}
-	@cd ${LIBFTDIR} && ${MAKE} fclean
+	${RM} ${OBJ}
+	${MAKE} -C ${LIBFTDIR} clean
+	#@cd ${LIBFTDIR} && ${MAKE} clean
 
 fclean: clean
 	${RM} ${NAME}

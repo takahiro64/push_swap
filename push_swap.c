@@ -6,7 +6,7 @@
 /*   By: thine <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:58:06 by thine             #+#    #+#             */
-/*   Updated: 2025/01/17 17:14:14 by thine            ###   ########.fr       */
+/*   Updated: 2025/01/29 13:38:41 by thine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ int	main(int argc, char *argv[])
 
 	a = ft_process(argc, argv);
 	if (!a || ft_check_dup(a))
-	{
-		ft_free_stack(&a);
-		ft_error("process");
-	}
+		ft_error(&a);
 	if (!ft_checksorted(a))
 		ft_push_swap(&a);
 	ft_free_stack(&a);
@@ -37,14 +34,14 @@ t_stack	*ft_process(int argc, char *argv[])
 	i = 1;
 	a = NULL;
 	if (argc < 2)
-		ft_error("argc<2");
+		exit(1);
 	if (argc == 2)
 		a = ft_sub_process(argv);
 	else
 	{
 		while (i < argc)
 		{
-			num = ft_atoi2(argv[i]);
+			num = ft_atoi2(argv[i], &a);
 			ft_add_back(&a, ft_stack_new(num));
 			i++;
 		}
@@ -63,10 +60,10 @@ t_stack	*ft_sub_process(char *argv[])
 	i = 0;
 	tmp = ft_split(argv[1], ' ');
 	if (!tmp)
-		ft_error("split error");
+		ft_error(&a);
 	while (tmp[i])
 	{
-		num = ft_atoi2(tmp[i]);
+		num = ft_atoi2(tmp[i], &a);
 		free(tmp[i]);
 		ft_add_back(&a, ft_stack_new(num));
 		i++;
