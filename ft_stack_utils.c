@@ -6,7 +6,7 @@
 /*   By: thine <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 17:13:33 by thine             #+#    #+#             */
-/*   Updated: 2025/01/29 16:53:48 by thine            ###   ########.fr       */
+/*   Updated: 2025/02/03 18:53:50 by thine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	ft_atoi2(char *str, t_stack **a, char ***tmp)
 		num = num * 10 + sign * (*str - 48);
 		if (!ft_isdigit(*str) || num > 2147483647 || num < -2147483648)
 		{
-			ft_free_double_point(*tmp);
+			if (tmp)
+				ft_free_double_point(*tmp);
 			ft_error(a);
 		}
 		str++;
